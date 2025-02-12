@@ -1,3 +1,16 @@
+/*********************************************************************************
+*  WEB422 – Assignment 3
+*
+*  I declare that this assignment is my own work in accordance with Seneca's
+*  Academic Integrity Policy:
+* 
+*  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
+* 
+*  Name: Hyerin Mun Student ID: 121694236 Date: February 12, 2025
+*
+********************************************************************************/ 
+
+
 import React, { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { Container, Accordion, Pagination } from 'react-bootstrap';
