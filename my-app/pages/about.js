@@ -5,26 +5,22 @@ import ListingDetails from '@/components/ListingDetails';
 import PageHeader from '@/components/PageHeader';
 
 export async function getStaticProps() {
-  try {
-    const res = await fetch('https://web-422-a3-11fgndvpo-hyerinmuns-projects.vercel.app/api/listings/10006546');
-    if (!res.ok) {
-      throw new Error(`Failed to fetch, status: ${res.status}`);
-    }
-    const data = await res.json();
-
-    return {
-      props: {
-        listing: data,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching listing:', error);
-    return {
-      props: {
-        listing: null,
-      },
-    };
-  }
+  return new Promise((resolve, reject) => {
+    fetch('https://web-422-a3-11fgndvpo-hyerinmuns-projects.vercel.app/api/listings/10006546')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to fetch listing, status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        resolve({ props: { listing: data } });
+      })
+      .catch((error) => {
+        console.error('Error fetching listing:', error);
+        resolve({ props: { listing: null } });
+      });
+  });
 }
 
 function About({ listing }) {
@@ -41,7 +37,7 @@ function About({ listing }) {
               <a>View Listing</a>
             </Link>
           ) : (
-            <p>Listing not available.</p>
+            <p style={{ color: 'red' }}>Listing not available at the moment.</p>
           )}
         </Card.Body>
         {listing && <ListingDetails listing={listing} />}
