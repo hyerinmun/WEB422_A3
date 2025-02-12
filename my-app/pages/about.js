@@ -31,14 +31,13 @@ function About({ listing }) {
         <Card.Body>
           <p>Hello! I am Hyerin Mun, a passionate web developer with expertise in GIS and programming.</p>
           <p>I love creating interactive applications and working on full-stack projects that enhance user experiences.</p>
-          <p>Check out one of the listings below!</p>
-          {listing ? (
+          <p>One of the places that I would like to visit is the: {listing ? (
             <Link href={`/listing/${listing._id}`} passHref legacyBehavior>
-              <a>View Listing</a>
+              <a>"Ribeira Charming Duplex"</a>
             </Link>
           ) : (
-            <p style={{ color: 'red' }}>Listing not available at the moment.</p>
-          )}
+            <span style={{ color: 'red' }}>Listing not available at the moment.</span>
+          )}</p>
         </Card.Body>
         {listing && <ListingDetails listing={listing} />}
       </Card>
