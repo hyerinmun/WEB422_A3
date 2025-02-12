@@ -17,7 +17,7 @@ import { Container, Accordion, Pagination } from 'react-bootstrap';
 import ListingDetails from '@/components/ListingDetails';
 import PageHeader from '@/components/PageHeader';
 
-function Home() {
+export default function Home() {
   const [page, setPage] = useState(1);
   const [pageData, setPageData] = useState([]);
   const { data, error } = useSWR(`https://web422-a1-inky.vercel.app/api/listings?page=${page}&perPage=10`);
@@ -59,5 +59,3 @@ function Home() {
     </Container>
   );
 }
-
-export default Home;
