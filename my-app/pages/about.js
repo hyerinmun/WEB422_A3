@@ -6,7 +6,7 @@ import PageHeader from '@/components/PageHeader';
 
 export async function getStaticProps() {
   return new Promise((resolve, reject) => {
-    fetch('https://web-422-a3-11fgndvpo-hyerinmuns-projects.vercel.app/api/listings/10006546')
+    fetch('https://web422-a1-inky.vercel.app/api/listings?page=1&perPage=5&name=Volcanoes%20National%20Park')
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to fetch listing, status: ${res.status}`);
