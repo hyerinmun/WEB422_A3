@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Link from 'next/link';
 import React from 'react';
 
-function MainNav() {
+export default function MainNav() {
   return (
     <>
     <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top">
@@ -25,5 +25,3 @@ function MainNav() {
      </>
   );
 }
-
-export default MainNav;

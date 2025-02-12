@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-function ListingDetails({ listing }) {
+export default function ListingDetails({ listing }) {
   if (!listing) {
     return <p style={{ color: 'red' }}>Listing details not available.</p>;
   }
@@ -38,5 +38,3 @@ function ListingDetails({ listing }) {
     </Container>
   );
 }
-
-export default ListingDetails;

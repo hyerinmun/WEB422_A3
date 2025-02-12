@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-function PageHeader({ text }) {
+export default function PageHeader({ text }) {
   return (
     <>
       <Card className="bg-light">
@@ -11,5 +11,3 @@ function PageHeader({ text }) {
     </>
   );
 }
-
-export default PageHeader;

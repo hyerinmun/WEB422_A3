@@ -6,7 +6,7 @@ import Error from 'next/error';
 import PageHeader from '@/components/PageHeader';
 import { Container } from 'react-bootstrap';
 
-function Listing() {
+export default function Listing() {
   const router = useRouter();
   const { id } = router.query;
   const { data, error, isLoading } = useSWR(
@@ -23,5 +23,3 @@ function Listing() {
     </Container>
   );
 }
-
-export default Listing;

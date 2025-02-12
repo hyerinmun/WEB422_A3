@@ -23,7 +23,7 @@ export async function getStaticProps() {
   });
 }
 
-function About({ listing }) {
+export default function About({ listing }) {
   return (
     <>
       <PageHeader text="About the Developer - Hyerin Mun" />
@@ -45,4 +45,3 @@ function About({ listing }) {
   );
 }
 
-export default About;
