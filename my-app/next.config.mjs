@@ -1,7 +1,13 @@
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: false,
-
+  async rewrites() {
+    return [
+      {
+        source: "/(.*)",
+        destination: "/",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
